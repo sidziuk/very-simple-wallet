@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:16.2
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: wallets
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  pgadmin:
+    image: dpage/pgadmin4:9.3
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.admin
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+
+  wallet-backend:
+    image: very-simple-wallet-be:0.0.1-SNAPSHOT
+    container_name: wallet-backend
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/wallets
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+    ports:
+      - "8080:8080"
