@@ -50,6 +50,8 @@ API: http://localhost:8080
 
 pgAdmin: http://localhost:5050
 
+FE: http://localhost:3000/
+
 Default pgAdmin credentials (configured via docker-compose.yml):
 
 Email: admin@admin.com
