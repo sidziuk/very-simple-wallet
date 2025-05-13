@@ -1,4 +1,6 @@
-export type Currency = 'CZK' | 'EUR';
+import type { CurrencyEnum } from './currencySlice';
+
+export type Currency = keyof typeof CurrencyEnum;
 
 export interface WalletResponse {
   id: number;
@@ -17,7 +19,12 @@ export interface TransactionRequest {
   note?: string;
 }
 
-export type TransactionType = 'DEPOSIT' | 'WITHDRAWAL';
+export const TransactionTypeEnum = {
+  DEPOSIT: 'DEPOSIT',
+  WITHDRAWAL: 'WITHDRAWAL',
+} as const;
+
+export type TransactionType = keyof typeof TransactionTypeEnum;
 
 export interface TransactionResponse {
   id: number;

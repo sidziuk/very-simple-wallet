@@ -6,11 +6,19 @@ A Spring Boot REST API for managing digital wallets and multi-currency transacti
 
 ## 🔧 Tech Stack
 
+🖥️ Backend
 - Java 17+
 - Spring Boot
 - JPA
 - PostgreSQL
 - Docker
+
+🌐 Frontend
+- React (with Vite)
+- TypeScript
+- Redux Toolkit + RTK Query
+- MUI
+- Docker + NGINX
 
 ---
 
