@@ -1,6 +1,6 @@
 # 💰 Simple Wallet Application
 
-A Spring Boot REST API for managing digital wallets and multi-currency transactions (CZK, EUR).
+A full-stack application for managing digital wallets and supporting multi-currency transactions (CZK, EUR), built with Spring Boot and React.
 
 ---
 
